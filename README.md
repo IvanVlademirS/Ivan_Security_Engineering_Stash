@@ -1,7 +1,6 @@
 #### ⭐Welcome to my Security Engineering Repo
-📌ReadMe:
-Scroll down to view topics > click links to view content.   
-All links point to files that are hosted on my Github.
+📌 ReadMe: Scroll down to view topics > click links to view content.   
+💡 *All links point to files that are hosted on my Github.*
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
