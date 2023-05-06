@@ -1,0 +1,65 @@
+Configuring JSON object script keys for password protection
+
+For security purposes, you can specify a type field in a JSON object script key definition to indicate that the field is a password and that the value displayed in the user interface should be obscured.
+
+Overview
+When you define script keys in your JSON object, you might need to specify a script key as a password and ensure that the value for that field is obscured in the user interface.
+
+In this situation, you can define the script key and include a type field with a value of password to indicate that this field is to be protected. The script key format is similar to the following example:
+         {
+          "scriptkey": "DATABASE_PASSWORD",
+     	    "scriptvalue": "",
+     	    "scriptdefaultvalue": "",
+     	    "type": "password"
+         },
+
+Example of a cbscript.json file with the "type":"password" parameter specified
+{
+      "name": "Create DB2 Data Source to a highly available DB2 Enterprise database cluster",
+      "version": "1.0.0",
+      "description": "This script package creates a JDBC Provider and Data Source for a highly available DB2 Enterprise database cluster",
+      "command": "/bin/sh /tmp/createDB2DataSource/createDB2DataSource.sh",
+      "log": "${WAS_PROFILE_ROOT}/logs/wsadmin.traceout",
+      "location": "/tmp/createDB2DataSource",
+      "timeout": "0",
+      "commandargs": "",
+      "keys":
+      [
+         {
+          "scriptkey": "DATASOURCE_NAME",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "SAMPLE"
+         },
+   {
+          "scriptkey": "DATASOURCE_JNDI_NAME",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "SAMPLE"
+         },
+         {
+          "scriptkey": "DATABASE_NAME",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "SAMPLE"
+         },
+   {
+          "scriptkey": "DATABASE_USERNAME",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "db2inst1"
+         },
+   {
+          "scriptkey": "DATABASE_PASSWORD",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "",
+          "type": "password"
+         },
+   {
+          "scriptkey": "DATABASE_HOST",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "${DB2_ESE_Primary.hostname}.${DB2_ESE_Primary.domain}"
+         },
+   {
+          "scriptkey": "DATABASE_PORT",
+          "scriptvalue": "",
+          "scriptdefaultvalue": "50000"
+         }
+      ]
+}
